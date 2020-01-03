@@ -1,0 +1,123 @@
+@media only screen and (min-width:600px){
+    mat-toolbar{
+        position: fixed;
+        width: 50%;
+        overflow: hidden;
+        bottom: 0;
+        margin-left: 25%;
+        
+    }
+    
+    
+    mat-toolbar a{
+        display: inline-block;
+        margin: 0 10px;
+        color: white;
+    }
+    mat-toolbar button{
+        color: black;
+        font-weight: bolder;
+        font-size: 150%;
+        flex: 1 1 auto;
+        height: 100%;
+        background-color: rgb(33, 72, 156);
+        margin: 0.2%;
+        /* border-radius: 5%; */
+    }
+    mat-icon{
+        flex: 1 1 auto;
+        margin: 0.2%;
+        padding-left: 10%;
+    }
+    .splitleft {
+        height: 100%;
+        width: 20%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+        left: 0;
+        background-color: rgb(28, 135, 177);
+      }
+      .appheader {
+        height: 20%;
+        width: 20%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+        /* background-color: rgb(28, 135, 177); */
+      }
+      .splitright {
+        height: 100%;
+        width: 80%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        overflow-x: hidden;
+        /* padding-top: 20px; */
+        right: 0;
+        /* background-color: rgb(245, 251, 252); */
+      }
+      .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color:white;
+        font-size: 10%
+      }
+      .menu{
+        height: 80%;
+        width: 20%;
+        position: fixed;
+        z-index: 1;
+        top: 20%;
+        overflow-x: hidden;
+        padding-top: 20px;
+        /* background-color: rgb(28, 135, 177); */
+        
+      }
+
+      .items{
+        color: whitesmoke;
+        font:bold;
+      }
+      
+}
+
+@media only screen and (max-width: 600px) {
+    mat-toolbar{
+        position: fixed;
+        width:100%;
+        overflow: hidden;
+        bottom: 0;
+    }
+    
+    
+    mat-toolbar a{
+        display: inline-block;
+        margin: 0 10px;
+        color: white;
+    }
+    mat-toolbar button{
+        color: black;
+        font-weight: bolder;
+        font-size: 65%;
+        flex: 1 1 auto;
+        height: 100%;
+        background-color: rgb(10, 84, 245);
+        margin: 0.2%;
+        /* border-radius: 5%; */
+    }
+    mat-icon{
+        padding-left: 5%;
+        flex: 1 1 auto;
+        margin: 1%;
+    }
+
+    
+}

@@ -1,0 +1,60 @@
+[
+	{
+        "product_id":"1",
+        "offer_id": "dis001",
+		"offer_name": "offer 1",
+        "offer_description": "checking the offer details",
+        "offer_discount": 10,
+        "valid_from": "2019-04-06T00:00:00.000Z",
+        "valid_to": "2019-04-10T00.00.00.000Z"
+        
+
+    },
+    {
+        "product_id":"2",
+		"offer_id": "dis002",
+		"offer_name": "offer 2",
+        "offer_description": "checking the offer details",
+        "offer_discount": 10,
+        "valid_from": "2019-04-06T00:00:00.000Z",
+        "valid_to": "2019-04-10T00.00.00.000Z"
+        
+    },
+    {
+        "product_id":"3",
+		"offer_id": "dis003",
+		"offer_name": "offer 3",
+        "offer_description": "checking the offer details",
+        "offer_discount": 10,
+        "valid_from": "2019-04-06T00:00:00.000Z",
+        "valid_to": "2019-04-10T00.00.00.000Z"
+    },
+    {
+        "product_id":"4",
+		"offer_id": "dis004",
+		"offer_name": "offer 4",
+        "offer_description": "checking the offer details",
+        "offer_discount": 10,
+        "valid_from": "2019-04-06T00:00:00.000Z",
+        "valid_to": "2019-04-10T00.00.00.000Z"
+    },
+    {
+        "product_id":"5",
+		"offer_id": "dis005",
+		"offer_name": "offer 5",
+        "offer_description": "checking the offer details",
+        "offer_discount": 10,
+        "valid_from": "2019-04-06T00:00:00.000Z",
+        "valid_to": "2019-05-10T00.00.00.000Z"
+    },
+    {
+        "product_id":"6",
+		"offer_id": "dis006",
+		"offer_name": "offer 6",
+        "offer_description": "checking the offer details",
+        "offer_discount": 10,
+        "valid_from": "2019-04-06T00:00:00.000Z",
+        "valid_to": "2019-04-10T00.00.00.000Z"
+	}
+	
+]

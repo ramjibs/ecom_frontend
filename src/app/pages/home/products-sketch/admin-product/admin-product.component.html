@@ -1,0 +1,64 @@
+<div *ngIf="form; then formContent else deleteContent"></div>
+
+<ng-template #formContent>
+  
+
+  <form [formGroup]="productForm">
+
+    <mat-form-field class="example-full-width-1">
+      <input matInput placeholder="Product Name"  formControlName="name">
+      <mat-error *ngIf="productForm.controls.name.errors">Required Field</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-1">
+      <input type="number" matInput placeholder="Product Price"  
+        formControlName='price'>
+        <mat-error *ngIf="productForm.controls.price.errors">Invalid Price</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-1">
+      <input matInput placeholder="Discount Percentage" formControlName='discount' type="number">
+      <mat-error *ngIf="productForm.controls.discount.errors">Invalid Discount</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-1">
+      <textarea matInput placeholder="Description"  formControlName='description'></textarea>
+      <mat-error *ngIf="productForm.controls.description.errors">Required Field</mat-error>
+    </mat-form-field>
+
+    <br />
+    
+<!-- 
+    <input type="file" mat-raised-button (change)="onFileSelected($event)">
+    <button type="button" mat-raised-button (click)="onUpload()">Upload</button>   
+    <div class="example-full-width-1">
+      <label for="file">Upload Image: </label>
+      <br />
+      <input type="file" id="file" name="image" [(ngModel)]='offer.product_image' (change)="uploadFile($event.target.files)" multiple>
+      
+      <button type="button" mat-raised-button (click)="fileInput.click()">Upload image</button>
+      <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file">
+  </div> -->
+
+    <button mat-raised-button [disabled] = '!productForm.valid' (click)='addProductToDB()' class="add-1">{{buttonName}}</button>
+    <button mat-raised-button (click)='cancelSubmission()' class="cancel">Cancel</button>
+
+  </form>
+</ng-template>
+
+
+<ng-template #deleteContent>
+
+  <div>
+    <p> Are you sure you want to delete ?</p>
+  </div>
+
+  <button mat-button (click)="cancelSubmission()" class="cancel"><i class="material-icons">
+      cancel
+    </i>cancel</button>
+  <button (click)='DeleteProduct()' mat-button class="delete"><i class="material-icons">
+      delete_outline
+    </i>Delete</button>
+
+
+</ng-template>

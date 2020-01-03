@@ -1,0 +1,424 @@
+
+@media only screen and (min-width: 600px) {
+  .body{
+      max-width: 100%;
+      max-height: 100%;
+      /* padding-bottom: 15%; */
+      /* background-image: url(http://eskipaper.com/images/water-background-14.jpg); */
+      /* position: fixed; */
+  }
+  .analysisStyle{
+    justify-self: right;
+    /* padding-left: 20%; */
+    background-color: rgb(14, 57, 173);
+      
+  }
+  .headerStyle{
+      text-align: left;
+      align-content: center;
+      align-items: flex-start;
+      font-size: 250%;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: rgb(231, 232, 238);
+      border-left-color: blue;
+      position: fixed;
+      width: 100%;
+      height: 10%;
+      background-color: rgb(14, 57, 173);
+      margin-bottom: 10%;
+      /* bottom: 0;
+      top: 0; */
+  
+  }
+  mat-card-title{
+      text-align: left;
+      font-size:100%;
+      font-weight: bolder;
+  }
+  .tableRowStyle{
+    margin-bottom: 5%;
+  }
+  .cardHeaderTitleStyle{
+    font-size: 130%;
+    font-weight: bolder;
+    color: rgb(35, 14, 153);
+  }
+  .cardTitleStyle{
+    font-size: 110%;
+    font-weight: bolder;
+    color: white;
+  }
+  .analysisCardButtonStyle{
+    /* background-color: blueviolet; */
+    width: 100%;
+  }
+  .cardContentStyle{
+      text-align: center;
+      align-content: center;
+      font-size:250%;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  .SearchResultHeaderStyle{
+    font-size: 150%;
+    font-weight: bold;
+    color: rgb(58, 58, 189);
+    margin: 3%;
+  }
+  .SearchResultContentStyle{
+    font-size: 120%;
+    font-weight: bold;
+    color: rgb(6, 6, 22);
+    margin: 2%;
+    /* padding-left: 15%; */
+    position: relative
+  }
+    .outerCardStyle{
+        max-width: 100%;
+        margin-top:5.5%;
+        margin-left: 1%;
+        margin-right: 1%;
+        /* position: fixed; */
+        max-height: 550px;
+        /* padding-right: 3%; */
+        border-bottom-color:black;
+        background-color:rgb(218, 214, 214);
+        /* margin-left: 2%; */
+        /* padding-top: 2%; */
+        /* margin-top: 1%; */
+
+    }
+  
+    .innerCardStyle{
+        width: 55%;
+        height: 75%;
+        border-radius: 50%;
+        border-width: 30%;
+        margin: 10%;
+      background-color:rgb(81, 96, 231);
+      
+    }
+    .innerCardButtonStyle{
+        align-items: center ;
+        width: 100%;
+        margin-right: 20%;
+        padding-right:20%;
+    }
+    mat-fab{
+      height: 200%;
+      width: 200%;
+      align-content: center;
+      align-items: center;
+      margin-left: 1%
+    }
+    .searchCardStyle{
+        
+        /* position: fixed; */
+        max-width: 100%;
+        height: 100%;
+        /* overflow-y: scroll; */
+        margin-top:2%;
+        margin-right: 2%;
+        margin-left: 1%;
+        background-color:rgb(218, 214, 214);
+        
+    }
+    .searchResultCardStyle{
+      max-width: 100%;
+      background-color:whitesmoke
+    }
+    .cardBackgroundStyle{
+      background-color:rgba(135, 167, 192, 0.342);
+    }
+    .searchDetailsCardStyle{
+      margin: 1%;
+      max-width: 50%;
+      background-color: whitesmoke;
+    }
+    .bottomSheetStyle{
+      width: 100vw;
+    }
+    
+    .mat-bottom-sheet-container-large, .mat-bottom-sheet-container-medium, .mat-bottom-sheet-container-xlarge {
+      /* unset maximum width */
+      max-width: unset !important;
+    }
+    
+    .mat-bottom-sheet-container-large, .mat-bottom-sheet-container-medium, .mat-bottom-sheet-container-xlarge {
+      /* remove border radius */
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+    }
+    .addressCardStyle{
+      overflow-x: auto;
+      /* overflow-y: hidden; */
+      width: 45%;
+      height: 230px;
+    }
+    .addressDetailsCardStyle{
+      width: 100%;
+      background-color: whitesmoke;
+      /* overflow-x: auto; */
+    }
+    mat-divider{
+      max-width: 50%;
+      margin-left: 5%;
+      /* margin-right: 50%; */
+    }
+    /* .deliveryCardStyle{
+      margin-right: -30%;
+    } */
+    /* .dateCardStyle{
+       margin-top: 1%;
+      height:  50%;
+      width: 70%;
+      margin-left: 0.5%;
+      padding-left:0.5%;
+      margin-bottom: 5%;
+    }
+    .dateFormField{
+      width:90%;
+      height: 20%;
+      padding-left: 3%;
+    } */
+    .chartCardStyle{
+      max-width: 100%;
+        margin:0.5%;
+        padding-right: 3%;
+        /* border-bottom-color:black; */
+        background-color:rgba(135, 167, 192, 0.342);
+        margin-left: 1.5%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+     .flex {
+      -webkit-flex: 1 1 0%;
+          -ms-flex: 1 1 0%;
+              flex: 1 1 0%;
+      box-sizing: border-box;
+    }
+    .flex-20 {
+      -webkit-flex: 1 1 20%;
+          -ms-flex: 1 1 20%;
+              flex: 1 1 20%;
+      max-width: 20%;
+      max-height: 100%;
+      box-sizing: border-box;
+    }
+    .layout-row .flex-33 {
+      -webkit-flex: 1 1 calc(100% / 3);
+          -ms-flex: 1 1 calc(100% / 3);
+              flex: 1 1 calc(100% / 3);
+      box-sizing: border-box;
+    }
+    .layout-row  .flex-66 {
+      -webkit-flex: 1 1 calc(200% / 3);
+          -ms-flex: 1 1 calc(200% / 3);
+              flex: 1 1 calc(200% / 3);
+      box-sizing: border-box;
+    }
+    .layout-row .flex-33 {
+      max-width: calc(100% / 3);
+      max-height: 100%;
+    }
+    .layout-row  .flex-66 {
+      max-width: calc(200% / 3);
+      max-height: 100%;
+    }
+    .layout-column .flex-33 {
+      max-width: 100%;
+      max-height: calc(100% / 3);
+    }
+    .layout-column  .flex-66 {
+      max-width: 100%;
+      max-height: calc(200% / 3);
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .body{
+      padding-top:1%;
+      /* background-color: rgb(207, 192, 228); */
+      padding-bottom: 1%;
+      width: 100%;
+  }
+    .headerStyle{
+      text-align: left;
+      align-content: center;
+      align-items: flex-start;
+      font-size: 250%;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: rgb(51, 61, 199);
+      padding-top: 2%;
+      padding-bottom: 2%;
+      border-left-color: blue;
+      position: relative;
+      width: 120%;
+      padding-right:0.5%
+  }
+  mat-card-title{
+    text-align: center;
+    font-size: 100%;
+  }
+  .analysisStyle{
+    justify-self: right;
+    /* padding-left: 20%; */
+    background-color: rgb(50, 76, 150);
+    margin:0.5%;
+  }
+  .cardHeaderTitleStyle{
+    font-size: 130%;
+    font-weight: bolder;
+    color: rgb(35, 14, 153);
+  }
+  .cardTitleStyle{
+    font-size: 130%;
+    font-weight: bolder;
+    color: white;
+  }
+  .cardContentStyle{
+    text-align: center;
+    align-content: center;
+    font-size:170%;
+    color:rgb(82, 16, 145);
+    font-weight: bolder;
+    /* margin: 35%;
+    padding: 10%; */
+  }
+  
+  .outerCardStyle{
+      /* max-width:100%;
+      margin:2%; */
+      /* padding-left: 5%; */
+      /* padding-right: 5%; */
+      /* border-bottom-color:black;
+      background-color:whitesmoke; */
+      /* margin-left: 5%; */
+      /* margin-right: 5%; */
+      /* border-right-color: grey;
+      border-block-end-color: gray;
+      border-block-start-color: black */
+      max-width: 90%;
+        margin-top:5.5%;
+        margin-left: 1%;
+        margin-right: 1%;
+        /* position: fixed; */
+        max-height: 100%;
+        /* padding-right: 3%; */
+        border-bottom-color:black;
+        background-color:rgb(218, 214, 214);
+        /* margin-left: 2%; */
+        /* padding-top: 2%; */
+        /* margin-top: 1%; */
+  }
+  
+  .innerCardStyle{
+      /* max-width: 80%;
+      margin-left: 5%;
+      margin-bottom: 3%;
+      padding-left: 5%;
+      height: 40%;
+    background-color:rgb(63, 103, 189); */
+    width: 100%;
+        height: 70%;
+        /* border-radius: 50%; */
+        border-width: 30%;
+        /* margin: 2%; */
+      background-color:rgb(81, 96, 231);
+      margin: 1%;
+  }
+  .innerCardButtonStyle{
+      align-items: center ;
+      width: 100%;
+      margin-right: 20%;
+      padding-right:20%;
+  }
+  
+  .searchCardStyle{
+      /* margin-top: 1%;
+      width: 100%;
+      align-content: center; */
+      /* margin-left: 5%; */
+      /* margin-right: 5%; */
+      /* height: 35%; */
+      max-width: 100%;
+        height: 100%;
+        /* overflow-y: scroll; */
+        margin-top:2%;
+        margin-right: 2%;
+        margin-left: 1%;
+        background-color:rgb(218, 214, 214);
+  }
+  .deliveryCardStyle{
+    margin-right: -30%;
+  }
+  .dateCardStyle{
+     margin:2%;
+    height: 25%;
+    width: 115%;
+    background-color: whitesmoke;
+  }
+  .dateFormField{
+    width:100%;
+  }
+  .addressCardStyle{
+    overflow-x: auto;
+    /* overflow-y: hidden; */
+    width: 100%;
+    height: 200px;
+  }
+  .addressDetailsCardStyle{
+    width: 100%;
+    /* overflow-x: auto; */
+  }
+  .searchFirstRowStyle{
+    overflow-x: auto;
+
+  }
+  .searchSecondRowStyle{
+    overflow-x: auto; 
+  }
+  /* .flex {
+    -webkit-flex: 1 1 0%;
+        -ms-flex: 1 1 0%;
+            flex: 1 1 0%;
+    box-sizing: border-box;
+  }
+  .flex-20 {
+    -webkit-flex: 1 1 20%;
+        -ms-flex: 1 1 20%;
+            flex: 1 1 20%;
+    max-width: 20%;
+    max-height: 100%;
+    box-sizing: border-box;
+  }
+  .layout-row .flex-33 {
+    -webkit-flex: 1 1 calc(100% / 3);
+        -ms-flex: 1 1 calc(100% / 3);
+            flex: 1 1 calc(100% / 3);
+    box-sizing: border-box;
+  }
+  .layout-row  .flex-66 {
+    -webkit-flex: 1 1 calc(200% / 3);
+        -ms-flex: 1 1 calc(200% / 3);
+            flex: 1 1 calc(200% / 3);
+    box-sizing: border-box;
+  }
+  .layout-row .flex-33 {
+    max-width: calc(100% / 3);
+    max-height: 100%;
+  }
+  .layout-row  .flex-66 {
+    max-width: calc(200% / 3);
+    max-height: 100%;
+  }
+  .layout-column .flex-33 {
+    max-width: 100%;
+    max-height: calc(100% / 3);
+  }
+  .layout-column  .flex-66 {
+    max-width: 100%;
+    max-height: calc(200% / 3);
+  } */
+  
+  }

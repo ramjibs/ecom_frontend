@@ -1,0 +1,104 @@
+<div *ngIf="form; then formContent else deleteContent"></div>
+
+<ng-template #formContent>
+  <form [formGroup]='offerForm'>
+    <mat-form-field class="example-full-width-1">
+      <input matInput placeholder="Offer Name" formControlName='name'>
+      <mat-error *ngIf = 'offerForm.controls.name.errors'>Required Field</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-1">
+      <input type="number" matInput placeholder="Offer Price" formControlName='price'>
+      <mat-error *ngIf = 'offerForm.controls.price.errors'>Invalid Price</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-2">
+      <textarea matInput placeholder="Description" formControlName='description' required></textarea>
+      <mat-error *ngIf = 'offerForm.controls.description.errors'>Required Field</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-1">
+      <input matInput [matDatepicker]="picker" formControlName='valid_from' placeholder="Choose a Start Date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker disabled='false' ></mat-datepicker>
+      <mat-error *ngIf = 'offerForm.controls.valid_from.errors'>Invalid Start Date</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-1">
+      <input matInput [min]="offerForm.controls.valid_from.value" [matDatepicker]="pickerEnd" formControlName='valid_to'
+        placeholder="Choose a End Date"  >
+      <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+      <mat-datepicker #pickerEnd disabled='false'></mat-datepicker>
+      <mat-error *ngIf = 'offerForm.controls.valid_to.errors'>Invalid End Date</mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width-1">
+      <mat-label>Select Payment Type</mat-label>
+      <mat-select formControlName="payment">
+        <mat-option *ngFor="let type of paytypes" [(value)]='type'>
+          {{type}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf = 'offerForm.controls.payment.errors'>Required Field</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-1">
+      <mat-label>Select Order Type</mat-label>
+      <mat-select formControlName="order_type">
+        <mat-option *ngFor="let order of ordertypes" [(value)]='order'>
+          {{order}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf = 'offerForm.controls.order_type.errors'>Required Field</mat-error>
+    </mat-form-field>
+
+
+    <br />
+
+    <button mat-stroked-button [disabled]='!offerForm.valid' (click)='addOffertoDB()'
+      class="add-1">{{buttonName}}</button>
+    <button mat-stroked-button (click)='cancelSubmission()' class="cancel">Cancel</button>
+
+
+
+  </form>
+
+  <!-- <form>
+    
+
+
+    <input type="file" mat-raised-button (change)="onFileSelected($event)">
+    <button type="button" mat-raised-button (click)="onUpload()">Upload</button>   
+
+
+
+     <div class="example-full-width-1">
+      <label for="file">Upload Image: </label>
+      <br />
+      <input type="file" id="file" name="image" [(ngModel)]='offer.product_image' (change)="uploadFile($event.target.files)" multiple>
+      
+      <button type="button" mat-raised-button (click)="fileInput.click()">Upload image</button>
+      <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file">
+  </div> 
+
+  </form> -->
+
+</ng-template>
+
+
+<ng-template #deleteContent>
+
+  <div>
+    <p> Are you sure you want to delete ?</p>
+  </div>
+
+  <button mat-button (click)="cancelSubmission()" class="cancel"><i class="material-icons">
+      cancel
+    </i>cancel</button>
+  <button (click)='DeleteOffer()' mat-button class="delete"><i class="material-icons">
+      delete_outline
+    </i>Delete</button>
+
+
+</ng-template>

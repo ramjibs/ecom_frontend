@@ -1,0 +1,57 @@
+[
+    {
+        "purchaseId":50, 
+        "orderId":1002,
+        "userId": 101,
+        "address": "No:1, abc street, abc nagar",
+        "product": "Bottle" , 
+        "deliveryDate":"2019-04-17" , 
+        "quantity":5,
+        "paymentMethod":"COD",
+        "typeOfOrder":"repeated"
+    },
+    {
+        "purchaseId":60, 
+        "orderId":1002,
+        "userId": 101,
+        "address": "No:1, abc street, abc nagar",
+        "product": "Bottle" , 
+        "deliveryDate":"2019-04-17" , 
+        "quantity":5,
+        "paymentMethod":"COD",
+        "typeOfOrder":"repeated"
+    },
+    {
+        "purchaseId":70, 
+        "orderId":1002,
+        "userId": 101,
+        "address": "No:1, abc street, abc nagar",
+        "product": "Bottle" , 
+        "deliveryDate":"2019-04-17" , 
+        "quantity":5,
+        "paymentMethod":"COD",
+        "typeOfOrder":"repeated"
+    },
+    {
+        "purchaseId":80, 
+        "orderId":1002,
+        "userId": 101,
+        "address": "No:1, abc street, abc nagar",
+        "product": "Bottle" , 
+        "deliveryDate":"2019-04-17" , 
+        "quantity":5,
+        "paymentMethod":"COD",
+        "typeOfOrder":"repeated"
+    },
+    {
+        "purchaseId":90, 
+        "orderId":1002,
+        "userId": 101,
+        "address": "No:1, abc street, abc nagar",
+        "product": "Bottle" , 
+        "deliveryDate":"2019-04-17" , 
+        "quantity":5,
+        "paymentMethod":"COD",
+        "typeOfOrder":"repeated"
+    }
+]

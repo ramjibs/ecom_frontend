@@ -1,0 +1,251 @@
+<div class="body">
+  <mat-card class="headerStyle">
+    {{title}}
+    
+  </mat-card>
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="100%" fxFlex.xs=100% class="deliveryCardStyle" *ngFor="let details of dashboard">
+      <mat-card class="outerCardStyle">
+        <div fxLayout="row" fxLayout.xs="column">
+          <mat-card-title class="cardHeaderTitleStyle">Delivery Status</mat-card-title>
+          <div fxLayout="row" fxLayout.xs="row">
+            <input matInput [matDatepicker]="picker1" placeholder="Start date" disabled>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker1 disabled="false"></mat-datepicker>
+            <input matInput [matDatepicker]="picker2" placeholder="End date" disabled>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker2 disabled="false"></mat-datepicker>
+          </div>
+          <div >
+            <!-- <button mat-button color="primary" (click)="getAnalysisDetails()" >Analysis</button> -->
+            <mat-card class="analysisStyle" (click)="getAnalysisDetails()" >
+              <mat-card-content style="font-size: 150%;color: white">
+                Analysis Chart
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+
+        <mat-card-content>
+          <div fxLayout="row" fxLayout.xs="column">
+            <div fxFlex="80%" fxFlex.xs=100%>
+              <mat-card (click)="getOrderDetails()" class="innerCardStyle">
+                <mat-card-header>
+                  <mat-card-title class="cardTitleStyle">Orders</mat-card-title>
+
+                </mat-card-header>
+                <div class="cardContentStyle">{{details.today_order}}</div>
+                <!-- <button mat-fab color="primary">{{details.today_order}}</button> -->
+              </mat-card>
+
+            </div>
+            <div fxFlex="80%" fxFlex.xs=100%>
+              <mat-card class="innerCardStyle" (click)="getPendingOrderDetails()">
+                <mat-card-header>
+                  <mat-card-title class="cardTitleStyle">Pending</mat-card-title>
+                </mat-card-header>
+                <div class="cardContentStyle">{{details.pending_delivery}}</div>
+                <!-- <mat-card-actions>
+                    <button mat-button class="innerCardButtonStyle">View</button>
+                  </mat-card-actions> -->
+              </mat-card>
+            </div>
+            <!-- </div>
+          <div fxLayout="row" fxLayout.xs="column"> -->
+            <div fxFlex="80%" fxFlex.xs=100%> 
+              <mat-card class="innerCardStyle" (click)="getDeliveredOrderDetails()">
+                <mat-card-header>
+                  <mat-card-title class="cardTitleStyle">Delivered</mat-card-title>
+                </mat-card-header>
+                <div class="cardContentStyle">{{details.today_order - details.pending_delivery}}</div>
+                <!-- <mat-card-actions>
+                    <button mat-button class="innerCardButtonStyle">View</button>
+                  </mat-card-actions> -->
+              </mat-card>
+            </div>
+            <div fxFlex="80%" fxFlex.xs=100%>
+              <mat-card class="innerCardStyle" (click)="getUserDetails()">
+                <mat-card-header>
+                  <mat-card-title class="cardTitleStyle">UserStats</mat-card-title>
+                </mat-card-header>
+                <div class="cardContentStyle">{{details.user_Stats}}</div>
+                <!-- <mat-card-actions>
+                    <button mat-button class="innerCardButtonStyle">View</button>
+                  </mat-card-actions> -->
+              </mat-card>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="100%" fxFlex.xs=100%>
+      <mat-card class="searchCardStyle">
+        <mat-card-header>
+          <mat-card-title>User Details</mat-card-title>
+        </mat-card-header>
+        <mat-form-field style="width:100%">
+          <input matInput placeholder="Search User Details" (input)="getSearchResults()">
+        </mat-form-field>
+        <div>
+          <p>
+            No results found
+          </p>
+        </div>
+        <mat-card class="searchResultCardStyle" *ngFor="let results of searchResults">
+          <mat-accordion>
+            <mat-expansion-panel class="cardBackgroundStyle">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{results.UserName}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-card-content>
+
+                <div fxLayout="row" fxLayout.xs="column">
+                  <div fxFlex="55%" fxFlex.xs="100%">
+                    <div fxLayout="row" fxLayout.xs="row" class="searchFirstRowStyle">
+                      <mat-icon mat-list-icon color="primary">email</mat-icon>
+                      <p class="SearchResultHeaderStyle">EmailID</p>
+                      <p class="SearchResultContentStyle">{{results.EmailID}}</p>
+                      <!-- <mat-divider></mat-divider> -->
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="row" class="searchFirstRowStyle">
+                      <mat-icon mat-list-icon color="primary">phone</mat-icon>
+                      <p class="SearchResultHeaderStyle">PhoneNo </p>
+                      <p class="SearchResultContentStyle">{{results.PhoneNo}}rtfgvhb</p>
+                      <mat-divider></mat-divider>
+                    </div>
+
+                    <div fxLayout="row" fxLayout.xs="row" class="searchSecondRowStyle">
+                      <mat-icon mat-list-icon color="primary">attach_money</mat-icon>
+                      <p class="SearchResultHeaderStyle">Wallet</p>
+                      <p class="SearchResultContentStyle">{{results.Wallet}}</p>
+                      <mat-divider></mat-divider>
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="row" class="searchSecondRowStyle">
+                      <mat-icon mat-list-icon color="primary">shopping_basket</mat-icon>
+                      <p class="SearchResultHeaderStyle">Ordered</p>
+                      <p class="SearchResultContentStyle">{{results.Ordered}}</p>
+                      <mat-divider></mat-divider>
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="row" class="searchSecondRowStyle">
+                      <mat-icon mat-list-icon color="primary">work_off</mat-icon>
+                      <p class="SearchResultHeaderStyle">Rejected</p>
+                      <p class="SearchResultContentStyle">{{results.Rejected}}</p>
+                      <mat-divider>
+                      </mat-divider>
+                    </div>
+                    <div fxLayout="row" fxLayout.xs="row" class="searchSecondRowStyle">
+                      <mat-icon mat-list-icon color="primary">access_alarms</mat-icon>
+                      <p class="SearchResultHeaderStyle">Scheduled </p>
+                      <p class="SearchResultContentStyle">{{results.Scheduled}}</p>
+                      <mat-divider></mat-divider>
+                    </div>
+                    <!-- <mat-card class="searchDetailsCardStyle">
+                        <mat-card-title>
+                          Wallet:
+                        </mat-card-title>
+                        <mat-card-content>{{results.Wallet}}</mat-card-content>
+                      </mat-card>
+                      <mat-card class="searchDetailsCardStyle">
+                        <mat-card-title>
+                          Ordered:
+                        </mat-card-title>
+                        <p>{{results.Ordered}}</p>
+                      </mat-card>
+                      <mat-card class="searchDetailsCardStyle">
+                        <mat-card-title>
+                          Rejected:
+                        </mat-card-title>
+                        <mat-card-content>{{results.Rejected}}</mat-card-content>
+                      </mat-card>
+                      <mat-card class="searchDetailsCardStyle">
+                        <mat-card-title>
+                          Scheduled:
+                        </mat-card-title>
+                        <mat-card-content>{{results.Scheduled}}</mat-card-content>
+                      </mat-card> -->
+                  </div>
+
+
+
+                  <div fxLayout="row" class="addressCardStyle">
+                    <mat-card class="addressDetailsCardStyle">
+                      <mat-card-header>
+                        <mat-card-title>Address 1</mat-card-title>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          console.log({{results.Addresses[0].DoorNo}})
+                          {{results.Addresses[0].DoorNo}}
+                        </p>
+                        <p>
+                          **************************,
+                        </p>
+                        <p>
+                          *****************************,
+                        </p>
+                        <p>
+                          ***** - 000000.
+                        </p>
+                      </mat-card-content>
+                    </mat-card>
+                    <mat-card class="addressDetailsCardStyle">
+                      <mat-card-header>
+                        <mat-card-title>Address 1</mat-card-title>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          1/001,SimpleTerms,
+                        </p>
+                        <p>
+                          **************,
+                        </p>
+                        <p>
+                          *************,
+                        </p>
+                        <p>
+                          ***** - 000000.
+                        </p>
+                      </mat-card-content>
+                    </mat-card>
+                    <mat-card class="addressDetailsCardStyle">
+                      <mat-card-header>
+                        <mat-card-title>Address 1</mat-card-title>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <p>
+                          1/001,SimpleTerms,
+                        </p>
+                        <p>
+                          **************,
+                        </p>
+                        <p>
+                          *************,
+                        </p>
+                        <p>
+                          ***** - 000000.
+                        </p>
+                      </mat-card-content>
+                    </mat-card> -->
+
+                  </div>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column">
+
+                </div>
+
+
+              </mat-card-content>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-card>
+      </mat-card>
+    </div>
+  </div>
+
+</div>
+
+<!-- <home-page></home-page>    -->

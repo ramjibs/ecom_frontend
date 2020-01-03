@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+html,body{
+    /* height: 100%; */
+    margin:0;
+}
+.bottomSheetStyle{
+    width: 80vw;
+  }
+  
+  .mat-bottom-sheet-container-large, .mat-bottom-sheet-container-medium, .mat-bottom-sheet-container-xlarge {
+    
+    max-width: unset !important;
+  }
+  
+  .mat-bottom-sheet-container-large, .mat-bottom-sheet-container-medium, .mat-bottom-sheet-container-xlarge {
+    
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+

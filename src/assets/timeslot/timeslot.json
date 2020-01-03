@@ -1,0 +1,39 @@
+[
+	{
+        "discount_id": "dis001",
+		"discount_name": "discount 1",
+        "discount_desc": "checking the discount details",
+        "discount_percent": 10
+    },
+    {
+		"discount_id": "dis001",
+		"discount_name": "discount 1",
+        "discount_desc": "checking the discount details",
+        "discount_percent": 10
+    },
+    {
+		"discount_id": "dis001",
+		"discount_name": "discount 1",
+        "discount_desc": "checking the discount details",
+        "discount_percent": 10
+    },
+    {
+		"discount_id": "dis001",
+		"discount_name": "discount 1",
+        "discount_desc": "checking the discount details",
+        "discount_percent": 10
+    },
+    {
+		"discount_id": "dis001",
+		"discount_name": "discount 1",
+        "discount_desc": "checking the discount details",
+        "discount_percent": 10
+    },
+    {
+		"discount_id": "dis001",
+		"discount_name": "discount 1",
+        "discount_desc": "checking the discount details",
+        "discount_percent": 10
+	}
+	
+]

@@ -1,0 +1,207 @@
+@media only screen and (min-width: 601px) {
+
+
+   
+   
+ 
+  .body {
+    
+    background-image: url(http://a.rgbimg.com/cache1uP3P0/users/x/xy/xymonau/300/o99zE7C.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    
+
+  }
+  .title-center {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+  
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    color:rgb(19, 18, 18);
+    margin-left: 5%;
+    width: 90%;
+    background-color: white;
+    border-block-end-color: black;
+    
+  }
+  .head{
+    
+    
+    /* color:  rgba(113, 161, 216, 0.952); */
+    color:  rgba(43, 178, 196, 0.952);
+    margin-top:-57px;
+   margin-left:35%;
+    
+  }
+  .log{
+    width: 90%;
+      /* border-radius: 15px 50px 30px; */
+      background:  rgb(56, 105, 211);
+      margin-left:5%;
+      margin-right: 5%;
+    
+  }
+  
+  .pass{
+    
+    margin-left:15%;
+    font-size:15px;
+    
+    
+  }
+  .hr{
+    border-top: 2px solid   rgb(80, 146, 233);
+  }
+  /* above line 23 mohans code is there after this code mcart code is there */
+  
+   .container-styles{
+    /* border-radius: 15px 50px 30px; */
+    /* opacity: 0.6;
+    filter: alpha(opacity=60);  */
+       position: relative;
+     align-self: auto;
+    padding:10px; 
+      margin: 0 auto; 
+     text-align: centre;
+    width: 25%;
+    margin-top:0px;
+    margin-left: 37%;
+    margin-right:37%;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+    top: 180px; 
+    border: 1px ;
+    border-radius: 25px;
+    /* -webkit-box-shadow: 0 0 10px #888888;
+          box-shadow: 0 0 10px #888888;  */
+          
+          /* background-image: url(https://i.pinimg.com/originals/89/f1/ef/89f1eff452400efb88773462ec6a0107.jpg); */
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background:white;
+          font-family: 'Roboto', sans-serif;
+    }
+  
+  .padding{
+    padding-bottom:0px;
+    margin-bottom:0px;
+  }
+  
+  .link-underline{
+     color: rgb(10, 84, 245);
+      text-decoration: underline;
+  } 
+  
+  .error{
+      color: red;
+      position:relative;
+      left:50px;
+  }
+  .form-group{
+    display:inline-block;
+    width: 100%;
+  
+  }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .body {
+      
+      background-image: url(http://a.rgbimg.com/cache1uP3P0/users/x/xy/xymonau/300/o99zE7C.jpg);
+
+     
+      background-position: center;
+      background-size:cover;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      font-family: 'Roboto', sans-serif;
+    }
+    .container-styles{
+      border-radius: 25px;  
+      /* opacity: 0.8;
+    filter: alpha(opacity=80); */
+      background-color:white;
+      /* border-radius: 15px 50px 30px; */
+        position: relative;
+      align-self: auto;
+     padding:10px; 
+       margin: 0 auto; 
+      text-align: centre;
+     width: 85%;
+     margin-left: 5%;
+     margin-right: 0%;
+     justify-content: center;
+     align-items: center;
+     position: relative; 
+     top: 180px; 
+     border: 1px ;
+     -webkit-box-shadow: 0 0 10px #888888;
+           box-shadow: 0 0 10px #888888; 
+     
+     }
+     .example-full-width {
+       
+      width: 95%;
+      margin-left:5%;
+    }
+     .form-group{
+      display:inline-block;
+      width: 95%;
+    
+    }
+    .padding{
+      padding-bottom:0px;
+      margin-bottom:0px;
+    }
+    
+    .link-underline{
+       color:#337ab7;
+        text-decoration: underline;
+    } 
+    
+    .error{
+        color: red;
+        position:relative;
+        left:50px;
+    }
+    .head{
+      margin-top:-57px;
+      color:  rgba(43, 178, 196, 0.952);
+      position: relative;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .log{
+      width: 90%;
+      /* border-radius: 15px 50px 30px; */
+      background:  rgb(56, 105, 211);
+      margin-left:5%;
+      margin-right: 5%;
+    }
+    .pass{
+      
+      margin-left:10%;
+      
+    }
+    .hr{
+      border-top: 2px solid   rgb(10, 84, 245);
+    
+    }
+   
+  } 
+  

@@ -1,0 +1,93 @@
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<!-- <div>{{this.passedData}}</div> -->
+
+<div *ngIf="this.passeddata">
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="OrderID">
+      <th mat-header-cell *matHeaderCellDef> OrderID </th>
+      <td mat-cell *matCellDef="let row"> {{row.OrderID}} </td>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="Date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let row"> {{row.Date}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="UserName">
+      <th mat-header-cell *matHeaderCellDef> UserName </th>
+      <td mat-cell *matCellDef="let row"> {{row.UserName}} </td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="Quantity">
+      <th mat-header-cell *matHeaderCellDef> Quantity </th>
+      <td mat-cell *matCellDef="let row"> {{row.Quantity}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Address">
+      <th mat-header-cell *matHeaderCellDef> Address </th>
+      <td mat-cell *matCellDef="let row"> {{row.Address}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[2, 4, 5,10]"></mat-paginator>
+</div>
+<div *ngIf="!this.passeddata">
+  <mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="UserName">
+      <th mat-header-cell *matHeaderCellDef> UserName </th>
+      <td mat-cell *matCellDef="let row"> {{row.UserName}} </td>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="EmailID">
+      <th mat-header-cell *matHeaderCellDef> EmailID </th>
+      <td mat-cell *matCellDef="let row"> {{row.EmailID}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="PhoneNo">
+      <th mat-header-cell *matHeaderCellDef> PhoneNo </th>
+      <td mat-cell *matCellDef="let row"> {{row.PhoneNo}} </td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="Wallet">
+      <th mat-header-cell *matHeaderCellDef> Wallet </th>
+      <td mat-cell *matCellDef="let row"> {{row.Wallet}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Ordered">
+      <th mat-header-cell *matHeaderCellDef> Ordered </th>
+      <td mat-cell *matCellDef="let row"> {{row.Ordered}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Rejected">
+      <th mat-header-cell *matHeaderCellDef> Rejected </th>
+      <td mat-cell *matCellDef="let row"> {{row.Rejected}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Scheduled">
+      <th mat-header-cell *matHeaderCellDef> Scheduled </th>
+      <td mat-cell *matCellDef="let row"> {{row.Scheduled}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedUserColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedUserColumns;">
+    </tr>
+  </mat-table>
+
+  <mat-paginator [pageSizeOptions]="[2, 4, 5,10]"></mat-paginator>
+</div>

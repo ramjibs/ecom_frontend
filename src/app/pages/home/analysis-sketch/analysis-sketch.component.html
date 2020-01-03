@@ -1,0 +1,42 @@
+<p>
+  Analysis
+</p>
+<!-- 
+<angular-d3-bar [id]="test2" [data]="barChartData" [dataColumns]="dataColumns" [colors]="colors" [yAxisTicks]=10 [width]=400
+    [height]=200 [transitionDuration]=1000 [transitionDelay]=30 [barWidth]="'16px'">
+  
+  </angular-d3-bar> -->
+  <div  fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="50%" style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas>
+    </div>
+    <div fxFlex="50%" style="display: block">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>
+  <div  fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="50%" style="display: block">
+      <canvas baseChart
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"></canvas>
+    </div>
+    <div fxFlex="50%" style="display: block">
+      <canvas baseChart
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"></canvas>
+    </div>
+  </div>

@@ -1,0 +1,138 @@
+<div class='products'>
+    <div class='searchandadd'>
+        <mat-form-field>
+            <input [(ngModel)]="searchTextOffer" name = 'offerSearch' matInput placeholder="Search for offers">
+          </mat-form-field>
+      
+          <button mat-raised-button [disabled]='showAddOfferForm' class="add" (click)="addOfferForm()" id="toggle-linear">
+            {{!showAddOfferForm ? 'Add new Offer' : ''}}
+          </button>
+    </div>
+
+
+<div class='summary'>
+    <div *ngIf='showAddOfferForm; then addnewOffer'></div>
+
+    <ng-template #addnewOffer>
+      
+      <app-admin-offer [ordertypes] = 'ordertypes' [paytypes] = 'paytypes' [addOfferObj] ='addOffer' (canSubmission)='cancelOfferSubmission($event)' (addOffer)= 'addOffertoDB($event)'></app-admin-offer>
+    </ng-template>
+
+    <div class="flip-card"
+    *ngFor="let offer of arrOffer | filterOffer: searchTextOffer; trackBy: trackByFn"
+        [class.voted]="flipped">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <mat-card class="example-card">
+              <img mat-card-image class="productImage" src={{offer.image}}>
+              <mat-card-content class="content">
+    
+    
+                <div>{{offer.name}} </div>
+    
+    
+    
+              </mat-card-content>
+              <mat-card-actions class="acions">
+                <button mat-button (click)="flipIt()" class="more"><i class="material-icons">
+                    more
+                  </i></button>
+                <button mat-button (click)="openUpdateDialogProduct(product)" class="update"><i class="material-icons">
+                    update
+                  </i></button>
+                <button (click)='openDeleteDialogProduct(product.id)' mat-button class="delete"><i class="material-icons">
+                    delete_outline
+                  </i></button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+          <div class="flip-card-back">
+            <mat-card class="example-card">
+    
+              <mat-card-content>
+    
+                {{offer.description}}
+    
+                {{offer.name}}
+            
+                Price: {{offer.price}}
+    
+    
+              </mat-card-content>
+              <mat-card-actions class="acions">
+                <button mat-button (click)="flipIt()" class="more"><i class="material-icons">
+                    more
+                  </i></button>
+    
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+  
+  </div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+  <div id="Discount" class="tabcontent">
+
+   
+
+    
+    <mat-card *ngFor="let offer of arrOffer | filterOffer: searchTextOffer; trackBy: trackByFn" class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar>{{offer.offer_id}}</div>
+        <mat-card-title>{{offer.name}}</mat-card-title>
+        <mat-card-subtitle>{{offer.description}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Price: {{offer.price}} <br/> 
+          Valid From {{offer.valid_from | date: 'mediumDate' }} to {{offer.valid_to | date: 'mediumDate'}} <br/>
+        </p>
+        <p>
+           Payment type : {{offer.payment}} <br /> 
+           Order type : {{offer.order_type}}
+        </p>
+      </mat-card-content>
+      <img mat-card-image src={{offer.image}}>
+        <mat-card-content class="productImage">
+          <img src={{offer.product_image}} class="productImage">
+        </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="openUpdateDialogOffer(offer)" class="update"><i class="material-icons">
+            update
+          </i>update</button>
+        <button (click)='openDeleteDialogOffer(offer.id)' mat-button class="delete"><i class="material-icons">
+            delete_outline
+          </i>Delete</button>
+      </mat-card-actions>
+    </mat-card>
+  </div> -->
+
+

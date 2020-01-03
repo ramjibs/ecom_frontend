@@ -1,0 +1,44 @@
+
+  <div id="Timeslot" class="tabcontent">
+
+    <mat-form-field class="example-full-width">
+        <input matInput [matDatepicker]="picker" [(ngModel)]='modifyDate' name='modifyDate'
+          placeholder="Choose Date" required disabled>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker disabled='false'></mat-datepicker>
+    </mat-form-field>
+    <button mat-stroked-button (click) ='modifyTimeslot()' class="search">Modify Timeslot</button>
+    
+    <button mat-stroked-button [disabled]='showAddTimeslotForm' class="add" (click)="addTimeslotForm()" id="toggle-linear">
+      {{!showAddTimeslotForm ? 'Add new Timeslot' : 'Please Fill Out Timeslot'}}
+    </button>
+
+    <div *ngIf='showAddTimeslotForm; then addnewTimeslot'></div>
+
+    <ng-template #addnewTimeslot>
+      
+      <app-admin-timeslot [addTimeslotObj] ='addTimeslot' (canSubmission)='cancelTimeslotSubmission($event)' (addTimeslot)= 'addTimeslottoDB($event)'></app-admin-timeslot>
+      
+    </ng-template>
+    <mat-card *ngFor="let timeslot of arrTimeslot; trackBy: trackByFnTimeslot" class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Time Slot</mat-card-title>
+        <!-- {{timeslot.time_slot_id}} -->
+      </mat-card-header>
+      <br />
+      <mat-card-content>
+        <p>
+          Valid From {{timeslot.from_time }} <br/> Valid To {{timeslot.to_time }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="openUpdateDialogTimeslot(timeslot)" class="update"><i class="material-icons">
+            update
+          </i>update</button>
+        <button (click)='openDeleteDialogTimeslot(timeslot.time_slot_id)' mat-button class="delete"><i class="material-icons">
+            delete_outline
+          </i>Delete</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

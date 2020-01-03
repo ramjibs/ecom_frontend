@@ -1,0 +1,42 @@
+<div *ngIf="form; then formContent else deleteContent"></div>
+
+<ng-template #formContent>
+  <form #timeslotForm = 'ngForm'>
+
+    <mat-form-field class="example-full-width-1">
+
+      <input matInput placeholder="Choose a Start Time" aria-label="24hr format start time" [ngxTimepicker]="fullTime"
+        [format]="24" [(ngModel)]='timeslot.from_time' name='from' required readonly>
+      <ngx-material-timepicker #fullTime></ngx-material-timepicker>
+
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width-1">
+      <input matInput placeholder="Choose a End Time" aria-label="24hr format end time" [ngxTimepicker]="fullTimeEnd"
+        [format]="24" [(ngModel)]='timeslot.to_time' name='to' required readonly>
+      <ngx-material-timepicker #fullTimeEnd></ngx-material-timepicker>
+
+    </mat-form-field>
+    <br />
+    <button mat-stroked-button [disabled]= '!timeslotForm.form.valid' (click)='addTimeslottoDB()' class="add-1">{{buttonName}}</button>
+    <button mat-stroked-button (click)='cancelSubmission()' class="cancel">Cancel</button>
+  </form>
+  
+</ng-template>
+
+
+<ng-template #deleteContent>
+
+  <div>
+    <p> Are you sure you want to delete ?</p>
+  </div>
+
+  <button mat-button (click)="cancelSubmission()" class="cancel"><i class="material-icons">
+      cancel
+    </i>cancel</button>
+  <button (click)='deleteTimeslot()' mat-button class="delete"><i class="material-icons">
+      delete_outline
+    </i>Delete</button>
+
+
+</ng-template>

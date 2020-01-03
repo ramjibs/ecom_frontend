@@ -1,0 +1,79 @@
+<div  class="body">
+  
+   
+  <div id = "login" class="container-styles">
+     <header class="head">
+     
+      <i class="material-icons" style="font-size: 100px">account_circle</i>
+      
+      </header>
+      
+       
+       <div class="panel-body padding">
+         <form class="form-horizontal" #loginForm="ngForm" >
+           <div class="form-group" >
+             
+              <mat-form-field appearance="outline" class="example-full-width">
+                  <mat-label>Username</mat-label>
+                  <input matInput  placeholder="Username" [(ngModel)]="ILoginPost.user_name" name="username" required>
+                  <mat-icon matSuffix><i class="material-icons">
+                    person
+                      </i></mat-icon>
+                  <mat-error> username is required</mat-error>
+                  
+                </mat-form-field>
+             <!-- <mat-form-field  class="example-full-width">
+               <input  matInput class="form" placeholder="Username" [(ngModel)]="ILoginPost.user_name" name="username" required >
+           
+               <mat-error> username is required</mat-error>
+               </mat-form-field> -->
+               
+           </div>
+           <div class="form-group">
+              <mat-form-field appearance="outline" class="example-full-width">
+                  <mat-label>Password</mat-label>
+                  <input matInput placeholder="Password" [(ngModel)]="ILoginPost.password" [type]="hide ? 'password' : 'text'" name="password" required>
+                  
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  <mat-error> password is required</mat-error> 
+                </mat-form-field>
+               <!-- <mat-form-field  >
+                   <input matInput placeholder="Password" [(ngModel)]="ILoginPost.password" type="password" name="password" required >
+                   <mat-error> password is required</mat-error> 
+                 </mat-form-field> -->
+           </div>
+           <br/>
+           
+           <div>
+               <mat-error *ngIf="wrongCredentails">Invalid Credentails</mat-error>
+                 
+           </div>
+           <br />
+           <div class="form-group">
+             <span class="col-xs-4"></span>
+             <div class="col-xs-3">
+              
+               <button mat-raised-button class= "log" (click)="onSubmit()" color="primary" [disabled]="!loginForm.form.valid" >Login
+                <i *ngIf='loading' class="fa fa-circle-o-notch fa-spin"></i>
+               </button>
+              
+               
+              
+             </div>
+             <hr class="hr">
+             <!-- <div>
+              <button mat-button class= "pass"  (click)="openDialog()">Forgot your password? Click here!</button>
+             </div> -->
+             
+              
+           </div>
+         </form>
+         <div>
+          <button mat-button class= "pass"  (click)="openDialog()">Forgot your password? Click here!</button>
+         </div>
+       </div>
+     <!-- </div>
+   </div> -->
+ </div>
+</div>
+

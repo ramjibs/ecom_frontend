@@ -1,0 +1,88 @@
+<div class='products'>
+  <div class='searchandadd'>
+      <mat-form-field>
+          <input [(ngModel)]="searchTextProduct" name = 'productSearch' matInput placeholder="Search for Products">
+        </mat-form-field>
+    
+        <button mat-raised-button [disabled]='showAddProductForm' class="add" (click)="addProductForm()" id="toggle-linear">
+          {{!showAddProductForm ? 'Add new Product' : ''}}
+        </button>
+  </div>
+
+
+<div class='summary'>
+  <div *ngIf='showAddProductForm; then addnewProduct'></div>
+
+  <ng-template #addnewProduct>
+    <app-admin-product [addProductObj]='addProduct' (canSubmission)='cancelProductSubmission($event)'
+      (addProduct)='addProducttoDB($event)'></app-admin-product>
+
+  </ng-template>
+
+  <div class="flip-card"
+  *ngFor="let product of arrProducts | filterProduct: searchTextProduct; trackBy: trackByFnProduct"
+      [class.voted]="flipped">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <mat-card class="example-card">
+            <img mat-card-image class="productImage" src={{product.image}}>
+            <mat-card-content class="content">
+  
+  
+              <div>{{product.name}} </div>
+  
+  
+  
+            </mat-card-content>
+            <mat-card-actions class="acions">
+              <button mat-button (click)="flipIt()" class="more"><i class="material-icons">
+                  more
+                </i></button>
+                <button mat-button (click)="openUpdateDialogProduct(product)" class="update"><i class="material-icons">
+                  update
+                </i></button>
+              <button (click)='openDeleteDialogProduct(product.id)' mat-button class="delete"><i class="material-icons">
+                  delete_outline
+                </i></button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        <div class="flip-card-back">
+          <mat-card class="example-card">
+  
+            <mat-card-content>
+  
+              {{product.description}}
+  
+              {{product.name}}
+          
+              Price: {{product.price}}
+  
+  
+            </mat-card-content>
+            <mat-card-actions class="acions">
+              <button mat-button (click)="flipIt()" class="more"><i class="material-icons">
+                  more
+                </i></button>
+                <button mat-button (click)="openUpdateDialogProduct(product)" class="update"><i class="material-icons">
+                  update
+                </i></button>
+              <button (click)='openDeleteDialogProduct(product.id)' mat-button class="delete"><i class="material-icons">
+                  delete_outline
+                </i></button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
